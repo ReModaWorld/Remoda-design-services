@@ -5,49 +5,112 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ReModa | Interior Design Services</title>
-<style>
-  :root{
-    --bg:#0b1a2a;      /* ReModa deep navy */
-    --card:#0f2034;
-    --line:#2b4666;
-    --ink:#ffffff;
-    --muted:#b9c7d8;
-    --accent:#ffffff;  /* CTA button */
+<style>:root {
+  --bg: #0b1a2a; /* ReModa deep navy */
+  --card: #0f2094;
+  --line: #2b4666;
+  --ink: #ffffff;
+  --muted: #b9c7d8;
+  --accent: #ffffff; /* CTA button */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 18px; /* Base font size increased for readability */
+  line-height: 1.6; /* Better text spacing */
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 32px; /* Larger heading */
+  margin: 0;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
   }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--ink)}
-  .wrap{max-width:1100px;margin:0 auto;padding:28px}
-  header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
-  h1{font-size:26px;margin:0}
-  .sub{color:var(--muted);font-size:14px}
-  .grid{display:grid;gap:14px}
-  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-  @media(min-width:1080px){.grid{grid-template-columns:1fr 1fr 1fr}}
-  details.card{
-    background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden;
-    transition:box-shadow .2s ease, transform .1s ease;
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  details.card[open]{box-shadow:0 10px 30px rgba(0,0,0,.25)}
-  summary{
-    list-style:none; cursor:pointer; padding:18px 18px; display:flex; align-items:center; gap:12px;
-  }
-  summary::-webkit-details-marker{display:none}
-  .badge{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted)}
-  .title{font-weight:700;font-size:17px}
-  .price{margin-left:auto;font-weight:700}
-  .chev{width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-45deg);opacity:.7}
-  details[open] .chev{transform:rotate(45deg)}
-  .body{padding:0 18px 18px 18px; border-top:1px solid var(--line)}
-  .row{display:grid;gap:10px;margin-top:14px}
-  @media(min-width:680px){.row{grid-template-columns:1fr 1fr}}
-  ul{margin:8px 0 0 18px}
-  li{margin:4px 0}
-  .cta{
-    display:inline-block;margin-top:14px;background:var(--accent);color:var(--bg);
-    text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700
-  }
-  .muted{color:var(--muted);font-size:13px}
-  footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center}
+}
+
+details.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+details.card[open] {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+summary {
+  padding: 20px;
+  font-size: 20px; /* Larger summary text */
+  font-weight: 600;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+p {
+  padding: 0 20px 20px;
+  margin: 0;
+  font-size: 18px; /* Larger paragraph text */
+}
+
+button {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px; /* Bigger button text */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.85;
+}
 </style>
 </head>
 <body>
