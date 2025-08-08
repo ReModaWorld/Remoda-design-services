@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ReModa | Interior Design Services</title>
+<style>
+  :root{
+    --bg:#0b1a2a;      /* ReModa deep navy */
+    --card:#0f2034;
+    --line:#2b4666;
+    --ink:#ffffff;
+    --muted:#b9c7d8;
+    --accent:#ffffff;  /* CTA button */
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--ink)}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px}
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+  h1{font-size:26px;margin:0}
+  .sub{color:var(--muted);font-size:14px}
+  .grid{display:grid;gap:14px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:1080px){.grid{grid-template-columns:1fr 1fr 1fr}}
+  details.card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    transition:box-shadow .2s ease, transform .1s ease;
+  }
+  details.card[open]{box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  summary{
+    list-style:none; cursor:pointer; padding:18px 18px; display:flex; align-items:center; gap:12px;
+  }
+  summary::-webkit-details-marker{display:none}
+  .badge{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted)}
+  .title{font-weight:700;font-size:17px}
+  .price{margin-left:auto;font-weight:700}
+  .chev{width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-45deg);opacity:.7}
+  details[open] .chev{transform:rotate(45deg)}
+  .body{padding:0 18px 18px 18px; border-top:1px solid var(--line)}
+  .row{display:grid;gap:10px;margin-top:14px}
+  @media(min-width:680px){.row{grid-template-columns:1fr 1fr}}
+  ul{margin:8px 0 0 18px}
+  li{margin:4px 0}
+  .cta{
+    display:inline-block;margin-top:14px;background:var(--accent);color:var(--bg);
+    text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700
+  }
+  .muted{color:var(--muted);font-size:13px}
+  footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Interior Design Services</h1>
+      <div class="sub">ReModa • Design | Build • Dallas–Fort Worth</div>
+    </div>
+    <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Book a Consultation</a>
+  </header>
+
+  <div class="grid">
+
+    <!-- 1. Design Consultation -->
+    <details class="card" id="consult">
+      <summary>
+        <span class="badge">Starter</span>
+        <span class="title">Design Consultation</span>
+        <span class="price">$150–$350</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="muted">Virtual 60 min ($150) • In‑person up to 90 min ($350)</div>
+        <div class="row">
+          <div>
+            <strong>What’s Included</strong>
+            <ul>
+              <li>Style & function assessment</li>
+              <li>Verbal recommendations & direction</li>
+              <li>Budget & timeline guidance</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Notes</strong>
+            <ul>
+              <li>No drawings or sourcing lists</li>
+              <li>Fee may credit toward a package (14 days)</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Book Now</a>
+      </div>
+    </details>
+
+    <!-- 2. E‑Design Package -->
+    <details class="card" id="edesign">
+      <summary>
+        <span class="badge">Remote</span>
+        <span class="title">E‑Design Package (Per Room)</span>
+        <span class="price">from $850</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="row">
+          <div>
+            <strong>What You Get</strong>
+            <ul>
+              <li>Virtual consultation (60 min)</li>
+              <li>Mood board & color palette</li>
+              <li>Scaled 2D layout</li>
+              <li>Product list with links</li>
+              <li>Implementation tips</li>
+              <li>One revision</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Add‑Ons</strong>
+            <ul>
+              <li>Extra revisions — $75 each</li>
+              <li>3D renderings — $250/room</li>
+            </ul>
+            <strong>Notes</strong>
+            <ul>
+              <li>Client provides photos & measurements</li>
+              <li>Digital deliverables only</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Start E‑Design</a>
+      </div>
+    </details>
+
+    <!-- 3. Full Service Room Design -->
+    <details class="card" id="room">
+      <summary>
+        <span class="badge">Popular</span>
+        <span class="title">Full Service Room Design</span>
+        <span class="price">$2,000–$3,500</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="muted">Premium option available: $5,000–$8,000</div>
+        <div class="row">
+          <div>
+            <strong>What You Get</strong>
+            <ul>
+              <li>Plans, mood boards, finish palettes</li>
+              <li>Furniture, lighting & materials selection</li>
+              <li>Purchasing & contractor coordination</li>
+              <li>On‑site styling (final)</li>
+              <li>2 rounds of revisions</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Add‑Ons</strong>
+            <ul>
+              <li>3D renderings — $300–$500/room</li>
+              <li>Extra revisions — $100/hr</li>
+              <li>Extended management — $95/hr</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Request Proposal</a>
+      </div>
+    </details>
+
+    <!-- 4. Full Home Interior Design -->
+    <details class="card" id="home">
+      <summary>
+        <span class="badge">Whole Home</span>
+        <span class="title">Full Home Interior Design</span>
+        <span class="price">$10k–$25k</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="muted">Up to 2,500 SF: $10k–$18k • 2,500–4,000 SF: $18k–$25k • Luxury: Custom</div>
+        <div class="row">
+          <div>
+            <strong>What You Get</strong>
+            <ul>
+              <li>Design for every room + scaled layouts</li>
+              <li>Materials, finishes, palettes</li>
+              <li>Lighting & fixture selections</li>
+              <li>Furniture sourcing & placement</li>
+              <li>Purchasing & vendor coordination</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Also Includes</strong>
+            <ul>
+              <li>Cabinetry layouts (kitchen/baths/built‑ins)</li>
+              <li>On‑site visits during project</li>
+              <li>Final styling & accessories</li>
+              <li>2–3 rounds of revisions</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Discuss Your Home</a>
+      </div>
+    </details>
+
+    <!-- 5. Renovation / New Construction Design -->
+    <details class="card" id="reno">
+      <summary>
+        <span class="badge">Build</span>
+        <span class="title">Renovation / New Construction Design</span>
+        <span class="price">from $3,000</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="muted">Kitchen/Bath plans $3k–$5k • Full design + oversight from $7.5k</div>
+        <div class="row">
+          <div>
+            <strong>What You Get</strong>
+            <ul>
+              <li>Collaboration with architects/builders</li>
+              <li>Plans, elevations, specifications</li>
+              <li>Finish & fixture selections</li>
+              <li>Cabinetry & millwork designs</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Management</strong>
+            <ul>
+              <li>Product ordering coordination</li>
+              <li>Site visits for design QC</li>
+              <li>Extended project management — $95/hr</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Plan My Project</a>
+      </div>
+    </details>
+
+    <!-- 6. A La Carte / Add‑On Services -->
+    <details class="card" id="alacarte">
+      <summary>
+        <span class="badge">Flexible</span>
+        <span class="title">A La Carte / Add‑On Services</span>
+        <span class="price">$95/hr+</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="row">
+          <div>
+            <strong>Menu</strong>
+            <ul>
+              <li>Mood board — $200/room</li>
+              <li>Material/finish selection — $750/room</li>
+              <li>Paint color selection — $250</li>
+              <li>Furniture sourcing — $300/room</li>
+            </ul>
+          </div>
+          <div>
+            <strong>More</strong>
+            <ul>
+              <li>Cabinetry layout plan — $750–$1,200</li>
+              <li>3D renderings — $250–$500/room</li>
+              <li>Revisions — $100/hr</li>
+              <li>Styling / PM — $95/hr</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Customize My Package</a>
+      </div>
+    </details>
+
+    <!-- 7. Airbnb / Vacation Rental Design -->
+    <details class="card" id="airbnb">
+      <summary>
+        <span class="badge">Investors</span>
+        <span class="title">Airbnb / Vacation Rental Design</span>
+        <span class="price">$2,500–$5,000</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="row">
+          <div>
+            <strong>What You Get</strong>
+            <ul>
+              <li>Layout optimization for bookings</li>
+              <li>Durable, rental‑friendly furnishings</li>
+              <li>Décor & accessories + ordering</li>
+              <li>Photo‑ready styling</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Notes</strong>
+            <ul>
+              <li>Furnishings billed separately</li>
+              <li>Turnkey install available</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Design My Rental</a>
+      </div>
+    </details>
+
+    <!-- 8. Commercial / Office Interior Design -->
+    <details class="card" id="commercial">
+      <summary>
+        <span class="badge">B2B</span>
+        <span class="title">Commercial / Office Interior Design</span>
+        <span class="price">$5,000–$20,000</span>
+        <span class="chev"></span>
+      </summary>
+      <div class="body">
+        <div class="row">
+          <div>
+            <strong>What You Get</strong>
+            <ul>
+              <li>Brand‑driven design concepts</li>
+              <li>Space planning for workflow</li>
+              <li>Materials, furniture & lighting specs</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Management</strong>
+            <ul>
+              <li>Contractor/vendor coordination</li>
+              <li>Staging & final styling</li>
+              <li>Phased build support</li>
+            </ul>
+          </div>
+        </div>
+        <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Discuss My Space</a>
+      </div>
+    </details>
+
+  </div>
+
+  <footer>© ReModa | Design • Build • DFW</footer>
+</div>
+</body>
+</html>
