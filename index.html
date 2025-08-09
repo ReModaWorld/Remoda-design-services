@@ -89,6 +89,24 @@
     box-shadow:0 6px 20px rgba(0,0,0,.35)
   }
   @media(min-width:900px){ .sticky-cta{display:none} }
+/* 1) Make room for the sticky CTA on mobile/tablet */
+@media (max-width: 899px){
+  body{ padding-bottom: 88px; }  /* space so content isn't hidden */
+}
+
+/* Respect iOS safe area (iPhone with home indicator) */
+.sticky-cta{ padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+@supports (padding: max(0px)){
+  @media (max-width: 899px){
+    body{ padding-bottom: max(88px, calc(env(safe-area-inset-bottom) + 76px)); }
+  }
+}
+
+/* 2) Never let long text clip inside cards */
+.card .body, .card .row, .card li{ overflow-wrap: anywhere; word-break: break-word; }
+
+/* 3) (Optional) If you prefer to hide sticky bar on iPad too, lower the breakpoint */
+@media (min-width: 768px){ .sticky-cta{ display:none; } }  /* comment this out if you want it back on iPad */
 </style>
 </head>
 <body>
