@@ -129,6 +129,27 @@
 
 /* 4) If we previously added this, neutralize it (prevents ugly mid-word breaks) */
 .card .body, .card .row, .card li{ word-break: normal; overflow-wrap: break-word; }
+
+/* iPad & small tablets: keep two columns but tighten text so it reads cleanly */
+@media (min-width: 820px) and (max-width: 1099px){
+  .card .row{
+    grid-template-columns: 1fr 1fr;   /* two columns on iPad */
+    column-gap: 14px;
+  }
+  .card ul{ margin-left: 16px; }
+  .card li{
+    font-size: 13.5px;                /* slightly smaller bullets */
+    line-height: 1.45;                 /* tighter but readable */
+    word-break: normal;                /* no mid-word shatters */
+    overflow-wrap: break-word;         /* wrap long words gracefully */
+    hyphens: auto;                     /* use hyphens where needed */
+    -webkit-hyphens: auto;
+    text-wrap: pretty;                 /* nicer line breaks (newer browsers) */
+  }
+  .card .body{ padding-bottom: 16px; }
+}
+
+
 </style>
 </head>
 <body>
