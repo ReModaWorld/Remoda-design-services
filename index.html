@@ -224,9 +224,36 @@
 /* Make hero sit tighter under the header */
 .hero{ padding-top: 8px; margin-top: 0; }
   
+/* Clean, centered header without extra CTAs */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  margin: 12px 0;
+}
+.site-header .logo {
+  max-width: 160px;
+  height: auto;
+}
+.site-header .site-title {
+  margin: 0;
+  font-size: clamp(22px, 2.5vw, 28px);
+}
+.site-header .sub {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+
+
+
 
 
   
+
+
 
 
 </style>
@@ -240,6 +267,7 @@
   <img src="images/images/remoda-logo.png?v=1" alt="ReModa Logo" class="logo">
   <h1 class="site-title">Interior Design Services</h1>
   <div class="sub">ReModa • Design | Build • Dallas–Fort Worth</div>
+</header>
 </header>
   <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Book a Consultation</a>
 </header>
