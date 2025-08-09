@@ -1,173 +1,136 @@
-<!-- rebuild -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ReModa | Interior Design Services</title>
-<style>  :root{
+<title>ReModa | Interior Design Packages & Pricing (DFW)</title>
+<meta name="description" content="Clear, transparent interior design packages & pricing by ReModa Design | Build in Dallas–Fort Worth. From consultation and e‑design to full-home and renovation design." />
+<meta property="og:title" content="ReModa | Interior Design Packages & Pricing" />
+<meta property="og:description" content="From quick consults to full-home transformations. Explore ReModa’s interior design packages, services, and pricing." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0b1a2a" />
+
+<style>
+  :root{
     --bg:#0b1a2a;      /* ReModa deep navy */
     --card:#0f2034;
     --line:#2b4666;
     --ink:#ffffff;
     --muted:#b9c7d8;
     --accent:#ffffff;  /* CTA button */
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--ink)}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px}
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+  h1{font-size:26px;margin:0}
+  .sub{color:var(--muted);font-size:14px}
 
-}
+  /* ---------- New Sections ---------- */
+  .hero{text-align:center;padding:20px 10px}
+  .hero h1{font-size:28px;margin:0 0 6px}
+  .hero-sub{color:var(--muted);margin:4px 0 12px}
+  .trust{
+    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+    color:var(--muted);font-size:13px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:10px 6px;margin:10px 0 18px
+  }
+  .compare{margin:10px 0 18px}
+  .compare h2,.process h2,.faq h2{font-size:18px;margin:0 0 8px}
+  .table{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .row{display:grid;grid-template-columns:1.1fr 2fr 1.3fr .8fr;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+  .row.head{background:#0f2136;font-weight:700;border-top:0}
+  @media(max-width:720px){.row{grid-template-columns: 1.2fr 1.6fr .9fr .7fr; font-size:13px; gap:6px }}
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui,Arial;
-  background:var(--bg);
-  color:var(--ink);
-  font-size:15px;       /* smaller base font */
-}
+  /* ---------- Cards Grid (Original) ---------- */
+  .grid{display:grid;gap:14px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:1080px){.grid{grid-template-columns:1fr 1fr 1fr}}
+  details.card{
+    background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    transition:box-shadow .2s ease, transform .1s ease;
+  }
+  details.card[open]{box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  summary{
+    list-style:none; cursor:pointer; padding:18px 18px; display:flex; align-items:center; gap:12px;
+  }
+  summary::-webkit-details-marker{display:none}
+  .badge{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted)}
+  .title{font-weight:700;font-size:17px}
+  .price{margin-left:auto;font-weight:700}
+  .chev{width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-45deg);opacity:.7}
+  details[open] .chev{transform:rotate(45deg)}
+  .body{padding:0 18px 18px 18px; border-top:1px solid var(--line)}
+  .row{display:grid;gap:10px;margin-top:14px}
+  @media(min-width:680px){.row{grid-template-columns:1fr 1fr}}
+  ul{margin:8px 0 0 18px}
+  li{margin:4px 0}
+  .cta{
+    display:inline-block;margin-top:14px;background:var(--accent);color:var(--bg);
+    text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700
+  }
+  .muted{color:var(--muted);font-size:13px}
 
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:28px;
-}
+  /* ---------- Supporting Sections ---------- */
+  .process{border-top:1px solid var(--line);padding-top:14px;margin-top:16px}
+  .process ol{margin:8px 0 0 18px}
+  .process li{margin:4px 0}
+  .finance{border:1px dashed var(--line);border-radius:12px;padding:12px;text-align:center;margin:16px 0;color:var(--muted)}
+  .finance strong{color:var(--ink)}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0}
+  .faq summary{cursor:pointer;font-weight:700}
+  .faq p{margin:6px 0 0 0;color:var(--muted)}
 
-header{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:16px;
-  margin-bottom:18px;
-}
-
-h1{
-  font-size:24px;       /* smaller heading */
-  margin:0;
-}
-.sub{
-  color:var(--muted);
-  font-size:13px;       /* smaller sub text */
-}
-
-.grid{
-  display:grid;
-  gap:14px;
-}
-@media(min-width:720px){
-  .grid{grid-template-columns:1fr 1fr}
-}
-@media(min-width:1080px){
-  .grid{grid-template-columns:1fr 1fr 1fr}
-}
-
-details.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:14px;
-  overflow:hidden;
-  transition:box-shadow .2s ease, transform .1s ease;
-}
-details.card[open]{
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-summary{
-  list-style:none;
-  cursor:pointer;
-  padding:14px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-summary::-webkit-details-marker{display:none}
-
-.badge{
-  font-size:11px;       /* smaller badge */
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:3px 7px;
-  color:var(--muted);
-}
-
-.title{
-  font-weight:800;
-  font-size:15px;       /* smaller title */
-}
-
-.price{
-  margin-left:auto;
-  font-weight:800;
-  font-size:15px;       /* smaller price */
-}
-
-.chev{
-  width:8px;
-  height:8px;
-  border-right:2px solid var(--ink);
-  border-bottom:2px solid var(--ink);
-  transform:rotate(-45deg);
-  opacity:.7;
-  margin-left:6px;
-}
-details[open] .chev{
-  transform:rotate(45deg);
-}
-
-.body{
-  padding:0 14px 14px;
-  border-top:1px solid var(--line);
-}
-
-.row{
-  display:grid;
-  gap:10px;
-  margin-top:10px;
-}
-@media(min-width:760px){
-  .row{grid-template-columns:1fr 1fr}
-}
-
-ul{
-  margin:6px 0 0 18px;
-  padding:0;
-}
-li{
-  margin:4px 0;
-  font-size:14px;       /* smaller list text */
-}
-.muted{
-  color:var(--muted);
-  font-size:13px;       /* smaller muted text */
-}
-
-.cta{
-  display:inline-block;
-  margin-top:12px;
-  background:var(--accent);
-  color:var(--bg);
-  text-decoration:none;
-  padding:10px 12px;
-  border-radius:10px;
-  font-weight:800;
-  font-size:14px;       /* smaller button */
-}
-
-footer{
-  margin-top:20px;
-  color:var(--muted);
-  font-size:12px;       /* smaller footer */
-  text-align:center;
-}
+  /* Footer + Sticky CTA */
+  footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center}
+  .sticky-cta{
+    position:fixed;left:12px;right:12px;bottom:12px;background:var(--accent);color:var(--bg);
+    text-align:center;padding:12px 16px;border-radius:999px;font-weight:800;text-decoration:none;z-index:999;
+    box-shadow:0 6px 20px rgba(0,0,0,.35)
+  }
+  @media(min-width:900px){ .sticky-cta{display:none} }
 </style>
 </head>
 <body>
 <div class="wrap">
+
+  <!-- Top header (original) -->
   <header>
     <div>
       <h1>Interior Design Services</h1>
-      <div class="sub">ReModa™ | Design Build • Dallas–Fort Worth</div>
+      <div class="sub">ReModa • Design | Build • Dallas–Fort Worth</div>
     </div>
     <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Book a Consultation</a>
   </header>
 
+  <!-- NEW: Hero -->
+  <section class="hero">
+    <h1>Interior Design Packages & Pricing</h1>
+    <p class="hero-sub">Clear packages. Transparent pricing. From quick consults to full-home transformations in DFW.</p>
+    <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Start with a Consultation</a>
+  </section>
+
+  <!-- NEW: Trust strip -->
+  <section class="trust">
+    <span>Design • Build • Dallas–Fort Worth</span>
+    <span>Licensed & Insured</span>
+    <span>5‑Star Client Reviews</span>
+    <span>Synchrony Financing Available</span>
+  </section>
+
+  <!-- NEW: Comparison table -->
+  <section class="compare">
+    <h2>Which package fits your project?</h2>
+    <div class="table">
+      <div class="row head"><div>Package</div><div>Deliverables</div><div>Best For</div><div>From</div></div>
+      <div class="row"><div>E‑Design</div><div>Moodboard, 2D plan, links</div><div>DIY & remote</div><div>$850</div></div>
+      <div class="row"><div>Full Service Room</div><div>Plans, selections, purchasing, styling</div><div>1–2 rooms, turnkey</div><div>$2,000–$3,500</div></div>
+      <div class="row"><div>Full Home</div><div>Whole‑home plan, coordination, styling</div><div>New builds & major remodels</div><div>$10k–$25k</div></div>
+      <div class="row"><div>Renovation / New Construction</div><div>Plans, specs, builder coordination</div><div>Kitchens, baths, additions</div><div>$3k+</div></div>
+    </div>
+  </section>
+
+  <!-- ORIGINAL: Cards grid with all services -->
   <div class="grid">
 
     <!-- 1. Design Consultation -->
@@ -438,7 +401,45 @@ footer{
 
   </div>
 
-  <footer> ReModa™ | Design Build • DFW</footer>
+  <!-- NEW: Process -->
+  <section class="process">
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Discovery</strong> – consultation to align on scope & budget</li>
+      <li><strong>Concept</strong> – moodboards, space plans, material direction</li>
+      <li><strong>Selections</strong> – finishes, fixtures, furnishings</li>
+      <li><strong>Coordination</strong> – vendors & contractor alignment</li>
+      <li><strong>Styling</strong> – delivery, placement, and final details</li>
+    </ol>
+  </section>
+
+  <!-- NEW: Financing banner -->
+  <section class="finance">
+    <p><strong>Financing available:</strong> Ask about monthly payments through Synchrony during your consultation.</p>
+  </section>
+
+  <!-- NEW: FAQ -->
+  <section class="faq">
+    <h2>FAQ</h2>
+    <details><summary>What’s the difference between E‑Design and Full Service?</summary>
+      <p>E‑Design delivers a plan you implement yourself. Full Service includes purchasing, coordination, and on‑site styling.</p>
+    </details>
+    <details><summary>Do you coordinate with contractors?</summary>
+      <p>Yes. Our Design | Build model streamlines decisions, scheduling, and install details with your GC or our team.</p>
+    </details>
+    <details><summary>How many revisions are included?</summary>
+      <p>Each package includes a defined number (see cards). Additional revisions are available hourly.</p>
+    </details>
+    <details><summary>Do you offer financing?</summary>
+      <p>Yes—through Synchrony. We’ll review options at your consultation.</p>
+    </details>
+  </section>
+
+  <footer>© ReModa | Design • Build • DFW • (469) 209‑9288 • info@remodapro.com</footer>
 </div>
+
+<!-- NEW: Sticky CTA (mobile) -->
+<a class="sticky-cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Book Consultation • From $150</a>
+
 </body>
 </html>
