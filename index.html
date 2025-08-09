@@ -166,6 +166,45 @@
   }
 }
 
+
+
+.site-header {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.site-header .logo {
+  max-width: 180px;      /* keeps it a good size */
+  height: auto;          /* keeps proportions */
+  margin-bottom: 10px;   /* space under logo */
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.site-header .sub {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.site-header .cta {
+  display: inline-block;
+  padding: 10px 20px;
+  background: white;
+  color: var(--bg, #0b1a2a);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.site-header .cta:hover {
+  background: #ddd;
+}
   
 
 
@@ -176,10 +215,12 @@
 
   <!-- Top header (original) -->
   <header>
-   <header style="text-align:center; margin-bottom: 20px;">
-  <img src="images/remoda-logo.png" alt="ReModa Logo" class="logo" style="max-width: 150px; height: auto;">
+   <header class="site-header">
+  <img src="images/images/remoda-logo.png?v=1" alt="ReModa Logo" class="logo">
   <h1>Interior Design Services</h1>
   <div class="sub">ReModa • Design | Build • Dallas–Fort Worth</div>
+  <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Book a Consultation</a>
+</header>
 </header>
     </div>
     <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Book a Consultation</a>
