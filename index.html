@@ -3,63 +3,101 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <title>ReModa | Interior Design Packages & Pricing (DFW)</title>
-<meta name="description" content="Clear, transparent interior design packages & pricing by ReModa Design | Build in Dallas–Fort Worth. From consultation and e‑design to full-home and renovation design." />
+<meta name="description" content="Clear, transparent interior design packages & pricing by ReModa Design | Build in Dallas–Fort Worth. From consultation and e‑design to full‑home and renovation design." />
 <meta property="og:title" content="ReModa | Interior Design Packages & Pricing" />
-<meta property="og:description" content="From quick consults to full-home transformations. Explore ReModa’s interior design packages, services, and pricing." />
+<meta property="og:description" content="From quick consults to full‑home transformations. Explore ReModa’s interior design packages, services, and pricing." />
 <meta property="og:type" content="website" />
 <meta name="theme-color" content="#0b1a2a" />
 
 <style>
+  /* =========================
+     THEME (colors + spacing)
+     Tweak spacing in one place
+     ========================= */
   :root{
-    --bg:#0b1a2a;      /* ReModa deep navy */
-    --card:#0f2034;
-    --line:#2b4666;
-    --ink:#ffffff;
-    --muted:#b9c7d8;
-    --accent:#ffffff;  /* CTA button */
+    /* Colors */
+    --bg:#0b1a2a;        /* page background (deep navy) */
+    --card:#0f2034;      /* card background */
+    --line:#2b4666;      /* borders/dividers */
+    --ink:#ffffff;       /* main text */
+    --muted:#b9c7d8;     /* secondary text */
+    --accent:#ffffff;    /* CTA button */
+
+    /* SPACING TOKENS (edit these first) */
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+
+    /* SECTION GAPS (quick knobs) */
+    --gap-header-bottom: var(--space-4);            /* space below logo/title */
+    --gap-hero-top: var(--space-2);                 /* hero top padding */
+    --gap-hero-bottom: var(--space-5);              /* space below hero */
+    --gap-trust-bottom: var(--space-5);             /* space below trust strip */
+    --gap-compare-bottom: var(--space-6);           /* space below comparison table */
+    --gap-grid-bottom: var(--space-6);              /* space below services grid */
+    --gap-process-top: var(--space-4);              /* space above "How it works" */
   }
 
+  /* Base */
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--ink)}
+  .wrap{max-width:1100px;margin:0 auto;padding:var(--space-7)}
 
-  .wrap{max-width:1100px;margin:0 auto;padding:28px}
-
-  /* ---------- Clean centered header (logo + title only) ---------- */
+  /* =========================
+     HEADER (Logo + Title only)
+     ========================= */
   .site-header{
     display:flex;flex-direction:column;align-items:center;text-align:center;
-    gap:6px;margin:12px 0 6px;
+    gap:var(--space-2);margin: var(--space-3) 0 var(--gap-header-bottom);
   }
   .site-header .logo{max-width:160px;height:auto}
   .site-header .site-title{margin:0;font-size:clamp(22px,2.5vw,28px)}
   .site-header .sub{font-size:14px;opacity:.9}
-  .site-header .cta{display:none !important} /* safety: kill any old header CTA */
+  .site-header .cta{display:none !important} /* safety: no CTA up here */
 
-  /* ---------- Hero / Trust / Compare ---------- */
-  .hero{text-align:center;padding-top:8px;margin-top:0}
-  .hero h1{font-size:28px;margin:0 0 6px}
-  .hero-sub{color:var(--muted);margin:4px 0 12px}
+  /* =========================
+     HERO (primary CTA lives here)
+     ========================= */
+  .hero{text-align:center;padding-top:var(--gap-hero-top);margin-top:0;margin-bottom:var(--gap-hero-bottom)}
+  .hero h1{font-size:28px;margin:0 0 var(--space-2)}
+  .hero-sub{color:var(--muted);margin:var(--space-1,4px) 0 var(--space-3)}
   .cta{
-    display:inline-block;margin-top:14px;background:var(--accent);color:var(--bg);
+    display:inline-block;margin-top:var(--space-3);background:var(--accent);color:var(--bg);
     text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700
   }
+
+  /* =========================
+     TRUST STRIP
+     ========================= */
   .trust{
-    display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+    display:flex;gap:var(--space-3);flex-wrap:wrap;justify-content:center;
     color:var(--muted);font-size:13px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    padding:10px 6px;margin:10px 0 18px
+    padding:var(--space-3) var(--space-2);margin:var(--space-3) 0 var(--gap-trust-bottom)
   }
-  .compare{margin:10px 0 18px}
-  .compare h2,.process h2,.faq h2{font-size:18px;margin:0 0 8px}
+
+  /* =========================
+     COMPARISON TABLE
+     ========================= */
+  .compare{margin:0 0 var(--gap-compare-bottom)}
+  .compare h2,.process h2,.faq h2{font-size:18px;margin:0 0 var(--space-2)}
   .table{border:1px solid var(--line);border-radius:12px;overflow:hidden}
   .row{display:grid;grid-template-columns:1.1fr 2fr 1.3fr .8fr;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
   .row.head{background:#0f2136;font-weight:700;border-top:0}
   @media(max-width:720px){.row{grid-template-columns: 1.2fr 1.6fr .9fr .7fr; font-size:13px; gap:6px }}
 
-  /* ---------- Cards Grid ---------- */
-  .grid{display:grid;gap:14px}
+  /* =========================
+     SERVICES GRID (cards)
+     ========================= */
+  .grid{display:grid;gap:14px;margin:0 0 var(--gap-grid-bottom)}
   @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-  /* keep tablets (even landscape) at 2 cols; desktop at 3 */
+  /* keep tablets (even landscape) at 2 cols; desktop jumps to 3 */
   @media(min-width:1280px){.grid{grid-template-columns:1fr 1fr 1fr}}
 
   details.card{
@@ -83,12 +121,8 @@
   li{margin:4px 0}
   .muted{color:var(--muted);font-size:13px}
 
-  /* ---------- Legibility upgrades ---------- */
-  /* phones: stack lists */
-  @media (max-width:819px){
-    .card .row{grid-template-columns:1fr !important}
-  }
-  /* iPad & small tablets (portrait+landscape): two list columns with compact bullets */
+  /* LEGIBILITY: list columns per device */
+  @media (max-width:819px){ .card .row{grid-template-columns:1fr !important} }
   @media (min-width:820px) and (max-width:1279px){
     .card .row{grid-template-columns:1fr 1fr;column-gap:14px}
     .card ul{margin-left:16px}
@@ -96,11 +130,12 @@
       font-size:13.5px;line-height:1.45;word-break:normal;overflow-wrap:break-word;
       hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty;
     }
-    .card .body{padding-bottom:16px}
   }
 
-  /* ---------- Process / Finance / FAQ ---------- */
-  .process{border-top:1px solid var(--line);padding-top:14px;margin-top:48px}
+  /* =========================
+     PROCESS / FINANCE / FAQ
+     ========================= */
+  .process{border-top:1px solid var(--line);padding-top:14px;margin-top:var(--gap-process-top)}
   .process ol{margin:8px 0 0 18px}
   .process li{margin:4px 0}
   .finance{border:1px dashed var(--line);border-radius:12px;padding:12px;text-align:center;margin:16px 0;color:var(--muted)}
@@ -109,7 +144,9 @@
   .faq summary{cursor:pointer;font-weight:700}
   .faq p{margin:6px 0 0 0;color:var(--muted)}
 
-  /* ---------- Footer + Sticky CTA ---------- */
+  /* =========================
+     FOOTER + STICKY CTA
+     ========================= */
   footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center}
   .sticky-cta{
     position:fixed;left:12px;right:12px;bottom:12px;background:var(--accent);color:var(--bg);
@@ -117,8 +154,7 @@
     box-shadow:0 6px 20px rgba(0,0,0,.35)
   }
   @media(min-width:900px){ .sticky-cta{display:none} }
-
-  /* Room for sticky CTA on mobile + safe area */
+  /* make room for sticky CTA on mobile + iOS safe area */
   @media (max-width:899px){ body{padding-bottom:88px} }
   .sticky-cta{padding-bottom:max(12px,env(safe-area-inset-bottom))}
   @supports (padding:max(0px)){
@@ -132,21 +168,29 @@
 <body>
 <div class="wrap">
 
-  <!-- Clean, centered header (no CTA here) -->
+  <!-- =========================
+       HEADER (no CTA here)
+       ========================= -->
   <header class="site-header">
     <img src="images/images/remoda-logo.png?v=1" alt="ReModa Logo" class="logo">
     <h1 class="site-title">Interior Design Services</h1>
     <div class="sub">ReModa • Design | Build • Dallas–Fort Worth</div>
   </header>
 
-  <!-- Hero with the ONE primary CTA -->
+  <!-- =========================
+       HERO (single primary CTA)
+       Adjust gap via: --gap-hero-top / --gap-hero-bottom
+       ========================= -->
   <section class="hero">
     <h1>Interior Design Packages & Pricing</h1>
-    <p class="hero-sub">Clear packages. Transparent pricing. From quick consults to full-home transformations in DFW.</p>
+    <p class="hero-sub">Clear packages. Transparent pricing. From quick consults to full‑home transformations in DFW.</p>
     <a class="cta" href="https://form.jotform.com/252160860802047" target="_blank" rel="noopener">Start with a Consultation</a>
   </section>
 
-  <!-- Trust strip -->
+  <!-- =========================
+       TRUST STRIP
+       Adjust bottom gap via: --gap-trust-bottom
+       ========================= -->
   <section class="trust">
     <span>Design • Build • Dallas–Fort Worth</span>
     <span>Licensed & Insured</span>
@@ -154,11 +198,16 @@
     <span>Synchrony Financing Available</span>
   </section>
 
-  <!-- Comparison -->
+  <!-- =========================
+       COMPARISON
+       Adjust bottom gap via: --gap-compare-bottom
+       ========================= -->
   <section class="compare">
     <h2>Which package fits your project?</h2>
     <div class="table">
-      <div class="row head"><div>Package</div><div>Deliverables</div><div>Best For</div><div>From</div></div>
+      <div class="row head">
+        <div>Package</div><div>Deliverables</div><div>Best For</div><div>From</div>
+      </div>
       <div class="row"><div>E‑Design</div><div>Moodboard, 2D plan, links</div><div>DIY & remote</div><div>$850</div></div>
       <div class="row"><div>Full Service Room</div><div>Plans, selections, purchasing, styling</div><div>1–2 rooms, turnkey</div><div>$2,000–$3,500</div></div>
       <div class="row"><div>Full Home</div><div>Whole‑home plan, coordination, styling</div><div>New builds & major remodels</div><div>$10k–$25k</div></div>
@@ -166,7 +215,10 @@
     </div>
   </section>
 
-  <!-- Services grid -->
+  <!-- =========================
+       SERVICES GRID (cards)
+       Adjust bottom gap via: --gap-grid-bottom
+       ========================= -->
   <div class="grid">
 
     <!-- 1. Design Consultation -->
@@ -199,7 +251,7 @@
       </div>
     </details>
 
-    <!-- 2. E‑Design -->
+    <!-- 2. E‑Design (Per Room) -->
     <details class="card" id="edesign">
       <summary>
         <span class="badge">Remote</span>
@@ -429,7 +481,10 @@
 
   </div>
 
-  <!-- Process -->
+  <!-- =========================
+       PROCESS
+       Adjust top gap via: --gap-process-top
+       ========================= -->
   <section class="process">
     <h2>How it works</h2>
     <ol>
@@ -441,12 +496,16 @@
     </ol>
   </section>
 
-  <!-- Financing -->
+  <!-- =========================
+       FINANCING
+       ========================= -->
   <section class="finance">
     <p><strong>Financing available:</strong> Ask about monthly payments through Synchrony during your consultation.</p>
   </section>
 
-  <!-- FAQ -->
+  <!-- =========================
+       FAQ
+       ========================= -->
   <section class="faq">
     <h2>FAQ</h2>
     <details><summary>What’s the difference between E‑Design and Full Service?</summary>
