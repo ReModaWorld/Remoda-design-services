@@ -45,7 +45,8 @@
   /* ---------- Cards Grid (Original) ---------- */
   .grid{display:grid;gap:14px}
   @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-  @media(min-width:1080px){.grid{grid-template-columns:1fr 1fr 1fr}}
+/* Keep tablets (even landscape) at 2 columns; go 3 cols only on wider screens */
+@media(min-width:1280px){.grid{grid-template-columns:1fr 1fr 1fr}}
   details.card{
     background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden;
     transition:box-shadow .2s ease, transform .1s ease;
@@ -131,10 +132,11 @@
 .card .body, .card .row, .card li{ word-break: normal; overflow-wrap: break-word; }
 
 /* iPad & small tablets: keep two columns but tighten text so it reads cleanly */
-@media (min-width: 820px) and (max-width: 1099px){
+@media (min-width: 820px) and (max-width: 1279px){
   .card .row{
-    grid-template-columns: 1fr 1fr;   /* two columns on iPad */
+    grid-template-columns: 1fr 1fr; /* keep two columns on iPad portrait + landscape */
     column-gap: 14px;
+  }
   }
   .card ul{ margin-left: 16px; }
   .card li{
